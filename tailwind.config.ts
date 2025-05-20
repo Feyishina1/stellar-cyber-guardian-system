@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,21 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Cybersecurity-specific colors
+				cyber: {
+					'background': '#0f172a', // Dark blue background
+					'card': '#1e293b',        // Slightly lighter blue for cards
+					'primary': '#7c3aed',     // Vibrant purple for primary elements
+					'secondary': '#4f46e5',   // Indigo for secondary elements
+					'accent': '#06b6d4',      // Cyan for accent elements
+					'critical': '#ef4444',    // Red for critical alerts
+					'warning': '#f59e0b',     // Amber for warnings
+					'success': '#10b981',     // Emerald for success indicators
+					'info': '#3b82f6',        // Blue for informational items
+					'text': '#f8fafc',        // Light text
+					'muted': '#94a3b8',       // Muted text
+				},
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +99,38 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				pulse: {
+					'0%, 100%': {
+						opacity: '1'
+					},
+					'50%': {
+						opacity: '0.5'
+					}
+				},
+				'data-flow': {
+					'0%': {
+						'stroke-dashoffset': '1000'
+					},
+					'100%': {
+						'stroke-dashoffset': '0'
+					}
+				},
+				blink: {
+					'0%, 100%': {
+						opacity: '1'
+					},
+					'50%': {
+						opacity: '0.2'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+				'data-flow': 'data-flow 20s linear infinite',
+				'blink': 'blink 2s ease-in-out infinite'
 			}
 		}
 	},
